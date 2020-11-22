@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="db" uuid="a32d0032-9410-403c-b7a1-fd59e5bee0e0">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Melon\Documents\inventory\database\init\db.sqlite</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="db [2]" uuid="5620d92f-4ddc-41e3-9384-de20a244ceac">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Melon\Documents\inventory\database\db.sqlite</jdbc-url>
+    </data-source>
+  </component>
+</project>

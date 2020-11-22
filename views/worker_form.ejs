@@ -1,0 +1,23 @@
+<%- include('partials/head')%>
+<%- include('partials/body-fluid')%>
+<%- include('partials/navigation')%>
+<%- include('partials/body-text-start')%>
+<h3>Create a New Employee</h3>
+<form action="" method="POST">
+    <div class="form-group" >
+        <label for="first_name">First Name:</label>
+        <input type="text" class="form-control" placeholder="first_name" name="first_name" required='true'>
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name:</label>
+        <input type="text" class="form-control" placeholder="last_name" name="last_name" required='true'>
+    </div>
+    <div class="form-group">
+        <label for="position">Position</label>
+        <input type="text" class="form-control" placeholder="position" name="position" required='true'>
+    </div>
+    <button class="btn btn-primary type="submit">Submit</button>
+</form>
+
+<%- include('partials/body-text-end')%>
+<%- include('partials/body-end')%>

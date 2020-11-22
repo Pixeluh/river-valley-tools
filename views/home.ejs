@@ -2,7 +2,17 @@
 <%- include('partials/body-fluid')%>
 <%- include('partials/navigation')%>
 <%- include('partials/body-text-start')%>
-<h1>Home page</h1>
-<p>paragraph</p>
+<h1>Welcome to River Valley Tools</h1>
+<h3>Quick Stats</h3>
+
+<% if (error) { %>
+    <p>Error!</p>
+<% } else { %>
+    <ul>
+        <li>Total Products: <%= data.product_count%></li>
+        <li>Total Workers: <%= data.worker_count%></li>
+    </ul>
+<%}%>
+
 <%- include('partials/body-text-end')%>
 <%- include('partials/body-end')%>

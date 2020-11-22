@@ -1,0 +1,27 @@
+<%- include('partials/head')%>
+<%- include('partials/body-fluid')%>
+<%- include('partials/navigation')%>
+<%- include('partials/body-text-start')%>
+<h3>Create a New Product</h3>
+<form action="" method="POST">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" placeholder="name" name="name" required='true'>
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" placeholder="price" name="price" required='true'>
+    </div>
+    <div class="form-group">
+        <label for="productType">Product Type</label>
+        <input type="text" class="form-control" placeholder="productType" name="productType" required='true'>
+    </div>
+    <div class="form-group">
+        <label for="upc">UPC</label>
+        <input type="text" class="form-control" placeholder="upc" name="upc" required='true'>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<%- include('partials/body-text-end')%>
+<%- include('partials/body-end')%>

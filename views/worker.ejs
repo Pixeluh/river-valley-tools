@@ -1,0 +1,25 @@
+<%- include('partials/head')%>
+<%- include('partials/body-fluid')%>
+<%- include('partials/navigation')%>
+<%- include('partials/body-text-start')%>
+
+<table  class="table table-striped table-hover">
+    <thead  class="thead-dark">
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <% worker_list.forEach(function(worker){%>
+        <td><a href="<%=worker.url%>"><%=worker.name%></a></td>
+        <td><%=worker.position%></td>
+    </tr>
+    <% }); %>
+
+    </tbody>
+</table>
+
+<%- include('partials/body-text-end')%>
+<%- include('partials/body-end')%>
