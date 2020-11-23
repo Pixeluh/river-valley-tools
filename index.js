@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-// const dataModel = require('../models/data-model.js');
 const bodyParser = require("body-parser")
+
+var router = express.Router();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 var mongoose = require('mongoose');
@@ -15,23 +16,16 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
 
 app.use(express.static('public'))
+//
 
-app.get('/', (req,res) => {
-   // res.send('Dashboard / Homepage')
-    res.render('home')
-})
+//
+router.get('/', function(req, res) {
+   res.redirect('/inventory');
+});
+//
 
-// app.get('/products', (req,res) => {
-//     // res.render('products')
-// });
 
 var inventoryRouter = require('./routes/inventory');
-
-// app.use('/', indexRouter);
 app.use('/inventory', inventoryRouter);
-
-/*app.get('*', (req, res) => {
-    res.send('I don\'t know this page')
-})*/
 
 app.listen(3000, () => { console.log("LISTENING")});

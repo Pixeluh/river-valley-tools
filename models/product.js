@@ -14,7 +14,7 @@ var ProductSchema = new Schema(
 ProductSchema
 .virtual('url')
 .get(function() {
-    return '/products/' + this._id;
+    return '/product/' + this._id;
 });
 
 module.exports = mongoose.model('Product', ProductSchema);

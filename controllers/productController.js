@@ -34,7 +34,8 @@ exports.product_list = function(req, res, next) {
 
 // Display detail page for a specific book.
 exports.product_detail = function(req, res) {
-    res.send('NOT IMPLEMENTED: product detail: ' + req.params.id);
+    // res.send('NOT IMPLEMENTED: product detail: ' + req.params.id);
+    res.render('product_detail');
 };
 
 // Display book create form on GET.
