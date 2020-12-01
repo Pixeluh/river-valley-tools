@@ -33,10 +33,19 @@ exports.product_list = function(req, res, next) {
 };
 
 // Display detail page for a specific book.
-exports.product_detail = function(req, res) {
-    // res.send('NOT IMPLEMENTED: product detail: ' + req.params.id);
-    res.render('product_detail');
+// exports.product_detail = function(req, res) {
+//     // res.send('NOT IMPLEMENTED: product detail: ' + req.params.id);
+//     res.render('product_detail');
+// };
+
+
+exports.product_detail = function (req, res, next) {
+    Product.findById(req.params.id).then((product) => {
+        res.render('product_detail', { title: product.name, product });
+    });
 };
+
+
 
 // Display book create form on GET.
 // Display book create form on GET.

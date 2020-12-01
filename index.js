@@ -16,14 +16,10 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
 
 app.use(express.static('public'))
-//
 
-//
 router.get('/', function(req, res) {
    res.redirect('/inventory');
 });
-//
-
 
 var inventoryRouter = require('./routes/inventory');
 app.use('/inventory', inventoryRouter);
