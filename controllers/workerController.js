@@ -31,17 +31,17 @@ exports.worker_create_post = [
     (req, res, next) => {
         // Extract the validation errors from a request.
         const errors = validationResult(req);
-        // Create a Book object with escaped and trimmed data.
+        // Create a worker object with escaped and trimmed data.
         var worker = new Worker(
             {   first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 position: req.body.position
             });
-        // Data from form is valid. Save book.
+        // Data from form is valid. Save worker.
 
         worker.save(function (err) {
             if (err) { return next(err); }
-            //successful - redirect to new book record.
+            //successful - redirect to new worker record.
             res.redirect('/inventory/worker/');
         });
     }

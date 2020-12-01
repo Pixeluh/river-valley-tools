@@ -12,7 +12,7 @@ exports.index = function(req, res) {
             Worker.countDocuments({}, callback);
         }
     }, function(err, results) {
-        res.render('home', { title: 'Local Library Home', error: err, data: results });
+        res.render('home', { title: 'Product', error: err, data: results });
     });
 };
 
@@ -20,7 +20,7 @@ exports.index = function(req, res) {
 //     res.send('NOT IMPLEMENTED: Site Home Page');
 // }
 
-// Display list of all books.
+// Display list of all product.
 exports.product_list = function(req, res, next) {
     Product.find({}, 'price name upc productType')
         .populate('product')
@@ -32,7 +32,7 @@ exports.product_list = function(req, res, next) {
 
 };
 
-// Display detail page for a specific book.
+// Display detail page for a specific product.
 // exports.product_detail = function(req, res) {
 //     // res.send('NOT IMPLEMENTED: product detail: ' + req.params.id);
 //     res.render('product_detail');
@@ -47,14 +47,13 @@ exports.product_detail = function (req, res, next) {
 
 
 
-// Display book create form on GET.
-// Display book create form on GET.
+// Display product create form on GET.
 exports.product_create_get = function(req, res) {
     // Get all authors and genres, which we can use for adding to our book.
         res.render('product_form');
 };
 
-// Handle book create on POST.
+// Handle product create on POST.
 exports.product_create_post = [
     body('name', 'Title must not be empty.').trim().isLength({ min: 1 }).escape(),
     body('productType', 'Author must not be empty.').trim().isLength({ min: 1 }).escape(),
@@ -65,39 +64,39 @@ exports.product_create_post = [
     (req, res, next) => {
         // Extract the validation errors from a request.
         const errors = validationResult(req);
-        // Create a Book object with escaped and trimmed data.
+        // Create a product object with escaped and trimmed data.
         var product = new Product(
             {   name: req.body.name,
                 price: req.body.price,
                 productType: req.body.productType,
                 upc: req.body.upc
             });
-            // Data from form is valid. Save book.
+            // Data from form is valid. Save product.
 
         product.save(function (err) {
                 if (err) { return next(err); }
-                //successful - redirect to new book record.
+                //successful - redirect to new book product.
                 res.redirect('/inventory/product/');
             });
         }
 ];
 
-// Display book delete form on GET.
+// Display product delete form on GET.
 exports.product_delete_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book delete GET');
+    res.send('NOT IMPLEMENTED: product delete GET');
 };
 
-// Handle book delete on POST.
+// Handle product delete on POST.
 exports.product_delete_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book delete POST');
+    res.send('NOT IMPLEMENTED: product delete POST');
 };
 
-// Display book update form on GET.
+// Display product update form on GET.
 exports.product_update_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book update GET');
+    res.send('NOT IMPLEMENTED: product update GET');
 };
 
-// Handle book update on POST.
+// Handle product update on POST.
 exports.product_update_post = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book update POST');
+    res.send('NOT IMPLEMENTED: product update POST');
 };

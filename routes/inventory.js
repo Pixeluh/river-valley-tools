@@ -5,59 +5,58 @@ var router = express.Router();
 var product_controller = require('../controllers/productController');
 var worker_controller = require('../controllers/workerController');
 
-/// BOOK ROUTES ///
 
 // GET catalog home page.
 router.get('/', product_controller.index);
 
-// GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
+// GET request for creating a product.
 router.get('/product/create', product_controller.product_create_get);
 
-// POST request for creating Book.
+// POST request for creating product.
 router.post('/product/create', product_controller.product_create_post);
 
-// GET request to delete Book.
+// GET request to delete product.
 router.get('/product/:id/delete', product_controller.product_delete_get);
 
-// POST request to delete Book.
+// POST request to delete product.
 router.post('/product/:id/delete', product_controller.product_delete_post);
 
-// GET request to update Book.
+// GET request to update product.
 router.get('/product/:id/update', product_controller.product_update_get);
 
-// POST request to update Book.
+// POST request to update product.
 router.post('/product/:id/update', product_controller.product_update_post);
 
-// GET request for one Book.
+// GET request for one product.
 router.get('/product/:id', product_controller.product_detail);
 
-// GET request for list of all Book items.
+// GET request for list of all product items.
 router.get('/product', product_controller.product_list);
 
-/// AUTHOR ROUTES ///
+/// WORKER ROUTES ///
 
-// GET request for creating Author. NOTE This must come before route for id (i.e. display author).
+// GET request for creating worker.
 router.get('/worker/create', worker_controller.worker_create_get);
 
-// POST request for creating Author.
+// POST request for creating worker.
 router.post('/worker/create', worker_controller.worker_create_post);
 
-// GET request to delete Author.
+// GET request to delete worker.
 router.get('/worker/:id/delete', worker_controller.worker_delete_get);
 
-// POST request to delete Author.
+// POST request to delete worker.
 router.post('/worker/:id/delete', worker_controller.worker_delete_post);
 
-// GET request to update Author.
+// GET request to update worker.
 router.get('/worker/:id/update', worker_controller.worker_update_get);
 
-// POST request to update Author.
+// POST request to update worker.
 router.post('/worker/:id/update', worker_controller.worker_update_post);
 
-// GET request for one Author.
+// GET request for one worker.
 router.get('/worker/:id', worker_controller.worker_detail);
 
-// GET request for list of all Authors.
+// GET request for list of all worker.
 router.get('/worker', worker_controller.worker_list);
 
 module.exports = router;
